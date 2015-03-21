@@ -16,6 +16,11 @@ class AdminTableSeeder extends Seeder {
 				'type'		=>	'admin'
 			));
 
+		\DB::table('user_profiles')->insert(array (
+				'user_id' 	=> 1,
+				'birthdate' =>'1986/06/17'
+
+			));
 		
 	}
 

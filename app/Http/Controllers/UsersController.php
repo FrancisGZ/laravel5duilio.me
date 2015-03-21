@@ -16,6 +16,17 @@ class UsersController extends Controller {
 		//->join('user_profiles','users.id','=','user_profiles.user_id')
 		->leftjoin('user_profiles','users.id','=','user_profiles.user_id')
 		->get();
+		//->first();
+
+		//dd($result);
+
+		foreach ($result as $row ) {
+			
+			$row->full_name = $row->first_name . ' ' . $row->last_name;
+
+		}
+
+		
 
 		dd($result);
 

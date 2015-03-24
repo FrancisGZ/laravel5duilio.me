@@ -23,9 +23,17 @@ Route::controllers([
 ]);
 
 
-Route::get('example', function (){
+/*Route::get('example', function (){
 
 	$user = 'Francis';
 
 	return view('examples.template',compact('user'));
+});*/
+
+
+Route::group(['prefix' => 'admin', 'namespace' =>  'Admin'], function() {
+
+		Route::resource('users','UsersController');
+
 });
+

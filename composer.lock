@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "35bcc2e84c3872b33ccf9d1dbd09f5de",
+    "hash": "7f392e698d4ace9c6a9f92301fbd8e11",
     "packages": [
         {
             "name": "classpreloader/classpreloader",
@@ -410,16 +410,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v5.0.17",
+            "version": "v5.0.18",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "b4abcbc98885e1b339acc7e993d2758d47f01ecc"
+                "reference": "b21be29a1fb12c84ab4e0b723e9c11492d0b25fe"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/b4abcbc98885e1b339acc7e993d2758d47f01ecc",
-                "reference": "b4abcbc98885e1b339acc7e993d2758d47f01ecc",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/b21be29a1fb12c84ab4e0b723e9c11492d0b25fe",
+                "reference": "b21be29a1fb12c84ab4e0b723e9c11492d0b25fe",
                 "shasum": ""
             },
             "require": {
@@ -532,7 +532,57 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2015-03-17 21:45:31"
+            "time": "2015-03-21 16:10:01"
+        },
+        {
+            "name": "laravelcollective/html",
+            "version": "v5.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/LaravelCollective/html.git",
+                "reference": "9af203053815cb12c9b8307e8367153c84fdd4b7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/LaravelCollective/html/zipball/9af203053815cb12c9b8307e8367153c84fdd4b7",
+                "reference": "9af203053815cb12c9b8307e8367153c84fdd4b7",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/http": "~5.0",
+                "illuminate/routing": "~5.0",
+                "illuminate/session": "~5.0",
+                "illuminate/support": "~5.0",
+                "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "mockery/mockery": "~0.9",
+                "phpunit/phpunit": "~4.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Collective\\Html\\": "src/"
+                },
+                "files": [
+                    "src/helpers.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Taylor Otwell",
+                    "email": "taylorotwell@gmail.com"
+                },
+                {
+                    "name": "Adam Engebretson",
+                    "email": "adam@laravelcollective.com"
+                }
+            ],
+            "time": "2015-03-10 15:59:48"
         },
         {
             "name": "league/flysystem",
@@ -782,16 +832,16 @@
         },
         {
             "name": "nikic/php-parser",
-            "version": "v1.1.0",
+            "version": "v1.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nikic/PHP-Parser.git",
-                "reference": "ac05ef6f95bf8361549604b6031c115f92f39528"
+                "reference": "edbf162e4cf116102d95eb635608b7d310cc01c6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nikic/PHP-Parser/zipball/ac05ef6f95bf8361549604b6031c115f92f39528",
-                "reference": "ac05ef6f95bf8361549604b6031c115f92f39528",
+                "url": "https://api.github.com/repos/nikic/PHP-Parser/zipball/edbf162e4cf116102d95eb635608b7d310cc01c6",
+                "reference": "edbf162e4cf116102d95eb635608b7d310cc01c6",
                 "shasum": ""
             },
             "require": {
@@ -801,7 +851,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.0-dev"
+                    "dev-master": "1.2-dev"
                 }
             },
             "autoload": {
@@ -823,7 +873,7 @@
                 "parser",
                 "php"
             ],
-            "time": "2015-01-18 11:29:59"
+            "time": "2015-03-22 16:17:25"
         },
         {
             "name": "psr/log",

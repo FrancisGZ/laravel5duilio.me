@@ -8,7 +8,11 @@
 				<div class="panel-heading">Usuarios</div>
 
 				<div class="panel-body">
-					<p>Hay {{ $users->total()}} registros</p>
+					
+          <a class="btn btn-info" href="{{ route('admin.users.create') }}" role="button">Crear usuario</a>
+
+          <!--<p>Hay {{ $users->total()}} registros</p>-->
+
 					<table class="table table-striped">
   						<tr>
   							<td>#</td>
@@ -28,7 +32,7 @@
   						</tr>
   							@endforeach
 					</table>
-					{!! $users->render() !!}
+					{!! $users->render() !!} <!--PAginacion-->
 				</div>
 			</div>
 		</div>

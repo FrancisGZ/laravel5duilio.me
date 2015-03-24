@@ -3,12 +3,15 @@
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
-use Illuminate\Http\Request;
+//use Illuminate\Http\Request;
+
+use Request;
 
 use App\User;
 
 class UsersController extends Controller {
 
+	
 	/**
 	 * Display a listing of the resource.
 	 *
@@ -28,7 +31,7 @@ class UsersController extends Controller {
 	 */
 	public function create()
 	{
-		//
+		return view('admin.users.create');
 	}
 
 	/**
@@ -38,7 +41,14 @@ class UsersController extends Controller {
 	 */
 	public function store()
 	{
-		//
+		//dd(Request::all());
+
+		$user = new User(Request::all());
+		$user->save();
+
+		return redirect()->route('admin.users.index');
+
+		//\Redirect::route('admin.users.index');
 	}
 
 	/**

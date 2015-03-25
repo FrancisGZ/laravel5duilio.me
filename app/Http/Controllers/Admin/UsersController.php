@@ -43,8 +43,21 @@ class UsersController extends Controller {
 	{
 		//dd(Request::all());
 
+		/*Primer forma
 		$user = new User(Request::all());
 		$user->save();
+		*/
+
+		/*Segunda forma
+		$user = new User();
+		$user->fill(Request::all());
+		$user->save()
+		*/
+
+
+
+		$user = User::create(Request::all());
+		
 
 		return redirect()->route('admin.users.index');
 
@@ -70,7 +83,10 @@ class UsersController extends Controller {
 	 */
 	public function edit($id)
 	{
-		//
+		$user = User::findOrFail($id);
+
+		return view('admin.users.edit', compact('user'));
+
 	}
 
 	/**
@@ -81,7 +97,11 @@ class UsersController extends Controller {
 	 */
 	public function update($id)
 	{
-		//
+		$user = User::findOrFail($id);
+
+		$user->fill(Request::all());
+
+		$user->save();
 	}
 
 	/**

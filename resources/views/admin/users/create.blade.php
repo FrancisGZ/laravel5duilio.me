@@ -9,49 +9,14 @@
 
 				<div class="panel-body">
 					
-          {!! Form::open(['route' => 'admin.users.store','methot' => 'POST']) !!}
+          {!! Form::open(['route' => 'admin.users.store','method' => 'POST']) !!}
 
 
-                  <div class="form-group">
-
-                      {!! Form::label('email', 'Correo electronico') !!}
-
-                       {!! Form::text('email', null, ['class' => 'form-control', 'placeholder' => 'Introduzca su email']) !!}
-                  
-                  </div>
-                  <div class="form-group">
-
-                      {!! Form::label('password', 'Contraseña') !!}
-
-                      {!! Form::password('password', ['class' => 'form-control' ]) !!}
-                     
-                  </div>
-                  <div class="form-group">
-                    
-                      {!! Form::label('first_name', 'Primer Nombre') !!}
-
-                       {!! Form::text('first_name', null, ['class' => 'form-control']) !!}
-
-                  </div>
-                   <div class="form-group">
-                    
-                      {!! Form::label('last_name', 'Apellido') !!}
-
-                       {!! Form::text('last_name', null, ['class' => 'form-control', ]) !!}
-
-                  </div>
-                    <div class="form-group">
-                    
-                      {!! Form::label('type', 'Tipo') !!}
-
-                       {!! Form::select('type',['' => 'Seleccione tipo','user' => 'Usuario', 'admin' => 'Administrador'],  ['class' => 'form-control', ]) !!}
-
-                  </div>
-                  
+                    @include('admin.users.partials.fields')
                  
-                  <button type="submit" class="btn btn-default">Submit</button>
+                  <button type="submit" class="btn btn-default">Crear usuario</button>
 
-              {!! Form::close() !!}
+          {!! Form::close() !!}
 
         
 			

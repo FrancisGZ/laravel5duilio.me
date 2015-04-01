@@ -5,7 +5,7 @@ use App\Http\Controllers\Controller;
 
 //use Illuminate\Http\Request;
 
-use Request;
+//use Request;
 
 use App\User;
 
@@ -39,8 +39,31 @@ class UsersController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function store()
+	public function store(CreateUsersRequest request)
 	{
+		//////////////////$data = Request::all();
+
+		/*$rules = array{
+			'first_name'	=> 'required',
+			'last_name' 	=> 'required',, 
+			'email'			=> 'required',, 
+			'password'		=> 'required',,
+			'type'			=> 'required',
+		}*/
+
+
+	
+		///////Validator::make($data, $rules);
+
+	///////////	if($v->fails())
+		////////////7{
+			//dd($v->errors());
+			///////////7return redirect()->back()
+				///////////77->withErrors($v->errors())
+				//////////////->withInput(Request::except('password');
+				//->withInput(Request::all(); Para regresar todos los datos
+		///}
+
 		//dd(Request::all());
 
 		/*Primer forma
@@ -99,7 +122,8 @@ class UsersController extends Controller {
 	{
 		$user = User::findOrFail($id);
 
-		$user->fill(Request::all());
+		//$user->fill(Request::all());
+		$user->fill($request->all());
 
 		$user->save();
 	}

@@ -8,7 +8,22 @@
 				<div class="panel-heading">Nuevo usuario</div>
 
 				<div class="panel-body">
-					
+
+					@include('admin.partials.messages')
+
+					<div class="alert alert-danger" role="alert">...</div>
+
+					@if ($errors->any())
+
+						<p>Corregir errores</p>
+						<ul>
+							@foreach($errors->all() as $error)
+								<li>{{ $error }}</li>
+							@endforeach
+						</ul>
+
+					@endif
+
           {!! Form::open(['route' => 'admin.users.store','method' => 'POST']) !!}
 
 

@@ -8,6 +8,7 @@ use App\Http\Controllers\Controller;
 //use Request;
 
 use App\User;
+use Illuminate\Support\Facades\Session;
 
 class UsersController extends Controller {
 
@@ -39,7 +40,7 @@ class UsersController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function store(CreateUsersRequest request)
+	public function store(CreateUsersRequest $request)
 	{
 		//////////////////$data = Request::all();
 
@@ -136,7 +137,17 @@ class UsersController extends Controller {
 	 */
 	public function destroy($id)
 	{
-		//
+
+		$user = User::findOrFail($id);
+
+		$user->delete();
+		//dd("Eliminar ". $id);
+
+		//User::destroy($id);
+
+		Session::flash('message', $user->full_name .' El registro fue eliminado');
+
+		return redirect()->route('admin.users.index');
 	}
 
 }

@@ -8,9 +8,11 @@
 				<div class="panel-heading">Usuario:{{ $user->first_name }} </div>
 
 				<div class="panel-body">
-			
-        
-			{!! Form::model($user, ['route' => ['admin.users.update',$user], 'method' => 'PUT']) !!}
+				
+
+					 <!--@include('admin.partials.messages')-->
+        			
+					{!! Form::model($user, ['route' => ['admin.users.update',$user], 'method' => 'PUT']) !!}
 
 					 @include('admin.users.partials.fields')
 
@@ -20,7 +22,10 @@
 					
 				</div>
 			</div>
+						 @include('admin.users.partials.delete')
 		</div>
 	</div>
 </div>
+
+
 @endsection

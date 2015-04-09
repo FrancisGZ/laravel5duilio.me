@@ -137,6 +137,8 @@ class UsersController extends Controller {
 	 */
 	public function destroy($id)
 	{
+		
+		
 
 		$user = User::findOrFail($id);
 
@@ -145,7 +147,12 @@ class UsersController extends Controller {
 
 		//User::destroy($id);
 
-		Session::flash('message', $user->full_name .' El registro fue eliminado');
+		$message = $user->full_name .' El registro fue eliminado';
+
+
+		//Session::flash('message', $user->full_name .' El registro fue eliminado');
+
+		Session::flash('message',  $message);
 
 		return redirect()->route('admin.users.index');
 	}

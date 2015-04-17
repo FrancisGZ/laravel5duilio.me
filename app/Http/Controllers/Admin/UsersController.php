@@ -3,7 +3,7 @@
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
-//use Illuminate\Http\Request;
+use Illuminate\Http\Request;
 
 //use Request;
 
@@ -18,9 +18,13 @@ class UsersController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function index()
+	public function index(Request $request)
 	{
-		$users = User::paginate();
+		//dd($request->get('name'));
+
+		$users = User::name($request->get('name'))->orderBy('id','DESC')->paginate();
+		
+		//$users = User::paginate();
 
 		return view('admin.users.index', compact('users'));
 	}

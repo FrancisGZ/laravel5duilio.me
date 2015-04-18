@@ -13,6 +13,11 @@ use Illuminate\Support\Facades\Session;
 class UsersController extends Controller {
 
 	
+	public function __construct ()
+	{
+		$this->middleware('auth');
+	}
+
 	/**
 	 * Display a listing of the resource.
 	 *
@@ -22,7 +27,9 @@ class UsersController extends Controller {
 	{
 		//dd($request->get('name'));
 
-		$users = User::name($request->get('name'))->orderBy('id','DESC')->paginate();
+		//$users = User::name($request->get('name'))->type($request->get('type'))->orderBy('id','DESC')->paginate();
+
+		$users = User::filterAndPaginate($request->get('name'), $request->get('type'));
 		
 		//$users = User::paginate();
 

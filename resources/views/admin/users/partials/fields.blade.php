@@ -31,7 +31,7 @@
                     
                       {!! Form::label('type', 'Tipo') !!}
 
-                      {!! Form::select('type', ['user' => 'Usuario', 'admin' => 'Administrador'],  ['class' => 'form-control']) !!}
+                      {!! Form::select('type', config('options.types'),  ['class' => 'form-control']) !!}
 
 
 

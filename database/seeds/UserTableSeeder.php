@@ -20,7 +20,7 @@ class UserTableSeeder extends Seeder {
 				'last_name' => $faker->lastName,
 				'email' 	=> $faker->unique()->email,
 				'password' 	=> \Hash::make('12345'),
-				'type'		=>	'user'
+				'type'		=>	$faker->randomElement(['editor','contributor','user'])
 
 			));
 

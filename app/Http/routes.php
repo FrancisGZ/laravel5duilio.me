@@ -13,7 +13,7 @@
 
 Route::get('/', 'WelcomeController@index');
 
-Route::get('home', 'HomeController@index');
+Route::get('home', 'HomeController@index'); 
 
 Route::controllers([
 
@@ -31,7 +31,9 @@ Route::controllers([
 });*/
 
 
-Route::group(['prefix' => 'admin', 'namespace' =>  'Admin'], function() {
+//Route::group(['prefix' => 'admin','middleware' => 'auth', 'namespace' =>  'Admin'], function() { 
+
+	Route::group(['prefix' => 'admin', 'namespace' =>  'Admin'], function() {
 
 		Route::resource('users','UsersController');
 

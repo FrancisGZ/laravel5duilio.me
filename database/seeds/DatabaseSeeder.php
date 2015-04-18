@@ -14,7 +14,7 @@ class DatabaseSeeder extends Seeder {
 	{
 		Model::unguard();
 
-		 $this->call('AdminTableSeeder');
+		 //$this->call('AdminTableSeeder'); //lo comente para que no hicera la migracion del administrador y  provocara un error
 		 $this->call('UserTableSeeder');
 	}
 
